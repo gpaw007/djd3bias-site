@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Débias | Mobile DJ Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body { font-family: 'Orbitron', sans-serif; }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-20 px-4 bg-black">
+    <img src="djdebias_redwht_logo.png" alt="DJ Débias Logo" class="w-64 mb-6">
+    <h1 class="text-4xl md:text-6xl font-bold text-red-600">Soundtracks to Your Best Nights</h1>
+    <p class="text-gray-300 mt-4 text-xl">Weddings, Private Events, College Parties & More</p>
+  </section>
+
+  <!-- About / Services -->
+  <section class="px-6 py-16 bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-red-500 mb-6">Meet DJ Débias</h2>
+      <p class="text-gray-300 text-lg">Bringing unforgettable energy and smooth transitions to every event. From elegant weddings to electric college nights, DJ Débias delivers tailored sounds that move the crowd.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10 text-left">
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">Weddings</h3><p>Romantic, curated playlists to set the mood and ignite the dance floor.</p></div>
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">Private Events</h3><p>Birthdays, anniversaries, and intimate gatherings tailored to your vibe.</p></div>
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">Corporate</h3><p>Professional, high-energy mixes to elevate your brand and entertain.</p></div>
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">Bar Mitzvahs</h3><p>Family-friendly with energy and rhythm for all generations.</p></div>
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">College Events</h3><p>High-volume hype and genre-spanning sets to get every student moving.</p></div>
+        <div><h3 class="text-xl text-red-400 font-semibold mb-2">Parties</h3><p>Bring the club to your backyard. Sound, lights, and vibe locked in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="bg-black px-6 py-20 text-center">
+    <h2 class="text-3xl font-bold text-red-500 mb-10">Live in Action</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <video controls class="w-full h-64 object-cover rounded"><source src="WProm.mov" type="video/mp4"></video>
+      <video controls class="w-full h-64 object-cover rounded"><source src="IMG_0637.mov" type="video/mp4"></video>
+      <video controls class="w-full h-64 object-cover rounded"><source src="Da Beat Jugle.mov" type="video/mp4"></video>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="bg-gray-900 px-6 py-20 text-center">
+    <h2 class="text-3xl font-bold text-red-500 mb-4">Book DJ Débias</h2>
+    <p class="text-gray-300 mb-6">Serving Boston, Worcester, Framingham, Natick, Newton & the greater New England area.</p>
+    <form action="https://formspree.io/f/xjvnrbrj" method="POST" class="max-w-2xl mx-auto text-left" onsubmit="return showConfirmation()">
+      <div class="mb-4">
+        <label for="name" class="block text-white mb-1">Full Name</label>
+        <input type="text" id="name" name="name" class="w-full p-2 rounded bg-black border border-gray-600 text-white" required />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-white mb-1">Email Address</label>
+        <input type="email" id="email" name="email" class="w-full p-2 rounded bg-black border border-gray-600 text-white" required />
+      </div>
+      <div class="mb-4">
+        <label for="date" class="block text-white mb-1">Event Date</label>
+        <input type="text" id="date" name="date" class="w-full p-2 rounded bg-black border border-gray-600 text-white" required />
+      </div>
+      <div class="mb-4">
+        <label for="details" class="block text-white mb-1">Event Details</label>
+        <textarea id="details" name="details" rows="4" class="w-full p-2 rounded bg-black border border-gray-600 text-white"></textarea>
+      </div>
+      <div class="mb-4">
+        <div class="g-recaptcha" data-sitekey="6Ldk65UrAAAAAPl7vrD5niGDieVle0_IzFwdEx5N"></div>
+      </div>
+      <button type="submit" class="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded">Submit Booking</button>
+      <p id="confirmation" class="text-green-400 mt-4 hidden">Thank you! Your request has been submitted.</p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center py-6 border-t border-gray-800">
+    <p class="text-sm text-gray-500">&copy; 2025 DJ Débias. All rights reserved. | <a href="mailto:d3bias@djd3bias.com" class="text-red-400">d3bias@djd3bias.com</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#date", {
+      altInput: true,
+      altFormat: "F j, Y",
+      dateFormat: "Y-m-d",
+      minDate: "today"
+    });
+
+    function showConfirmation() {
+      document.getElementById("confirmation").classList.remove("hidden");
+      return true;
+    }
+  </script>
+</body>
+</html>
